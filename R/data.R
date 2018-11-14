@@ -21,3 +21,16 @@
 #'   \item{gene annotation}{based on GENCODE M16}
 #' }
 "gvm_mm10"
+
+#' getGvm
+#'
+#' retrieve the \code{GvizManager} object for a given genome assembly
+#'
+#' @param assembly  string specifying the genome assembly
+#' @return \code{GvizManager} object
+#'
+#' @export
+getGvm <- function(assembly){
+	objName <- data(list=paste0("gvm_", assembly), package="muGvizAnnotation")
+	return(get(objName))
+}

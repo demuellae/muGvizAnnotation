@@ -8,6 +8,7 @@ Date: 2018-11-14
 License: GPL-3
 Version: 0.1
 Depends:
+	Gviz,
 	GenomicRanges,
     muRtools
 Imports:
