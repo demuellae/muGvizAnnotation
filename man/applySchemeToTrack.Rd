@@ -4,12 +4,12 @@
 \alias{applySchemeToTrack}
 \title{applySchemeToTrack}
 \usage{
-applySchemeToTrack(track, scheme = "bwScheme")
+applySchemeToTrack(track, scheme = NULL)
 }
 \arguments{
 \item{track}{the Gviz track to modify}
 
-\item{scheme}{the name of the scheme to be applied as a string}
+\item{scheme}{the name of the scheme to be applied as a string, or \code{NULL} (default) for the current scheme}
 }
 \value{
 the track with modified display parameters

@@ -6,12 +6,14 @@
 \alias{getGeneTrack}
 \title{getGeneTrack-methods}
 \usage{
-\S4method{getGeneTrack}{GvizManager}(object, chrom)
+\S4method{getGeneTrack}{GvizManager}(object, chrom, applyScheme = TRUE)
 }
 \arguments{
 \item{object}{\code{\linkS4class{GvizManager}} object}
 
 \item{chrom}{name of the chromosome for which the track should be returned}
+
+\item{applyScheme}{apply the display parameters of the currently active Gviz scheme to the result}
 }
 \value{
 \code{Gviz::GeneRegionTrack} for the specified chromosome

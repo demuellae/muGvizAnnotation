@@ -14,3 +14,7 @@ Depends:
 Imports:
 Suggests:
 RoxygenNote: 6.1.1
+Collate: 
+    'schemes.R'
+    'GvizManager-class.R'
+    'data.R'

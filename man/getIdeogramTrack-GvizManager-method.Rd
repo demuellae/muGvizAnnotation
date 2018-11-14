@@ -6,12 +6,15 @@
 \alias{getIdeogramTrack}
 \title{getIdeogramTrack-methods}
 \usage{
-\S4method{getIdeogramTrack}{GvizManager}(object, chrom)
+\S4method{getIdeogramTrack}{GvizManager}(object, chrom,
+  applyScheme = TRUE)
 }
 \arguments{
 \item{object}{\code{\linkS4class{GvizManager}} object}
 
 \item{chrom}{name of the chromosome for which the track should be returned}
+
+\item{applyScheme}{apply the display parameters of the currently active Gviz scheme to the result}
 }
 \value{
 \code{Gviz::IdeogramTrack} for the specified chromosome

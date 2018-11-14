@@ -31,8 +31,7 @@ gviz_bwScheme_settings <- list(
 #' @return (invisibly) the scheme structure
 #' @export
 gviz_bwScheme <- function() {
-  require(Gviz)
-  scheme <- getScheme()
+  scheme <- Gviz::getScheme()
   for (typeName in names(gviz_bwScheme_settings)){
     for (settingName in names(gviz_bwScheme_settings[[typeName]])){
       setting <- gviz_bwScheme_settings[[typeName]][[settingName]]
@@ -52,12 +51,16 @@ gviz_bwScheme <- function() {
 #' 
 #' Applies a Gviz plotting scheme to the display parameters of a track
 #' @param track the Gviz track to modify
-#' @param scheme the name of the scheme to be applied as a string
+#' @param scheme the name of the scheme to be applied as a string, or \code{NULL} (default) for the current scheme
 #' @return the track with modified display parameters
 #' @author Fabian Mueller
 #' @export 
-applySchemeToTrack <- function(track, scheme="bwScheme"){
-  schemeSettings <- get(paste0("gviz_", scheme, "_settings"))
+applySchemeToTrack <- function(track, scheme=NULL){
+  if (is.character(scheme) && scheme!="default"){
+    schemeSettings <- get(paste0("gviz_", scheme, "_settings"))
+  } else {
+    schemeSettings <- Gviz::getScheme()
+  }
   for (typeName in names(schemeSettings)){
     if (inherits(track, typeName)){
       displayPars(track) <- schemeSettings[[typeName]]

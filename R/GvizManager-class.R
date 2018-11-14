@@ -4,6 +4,9 @@
 ################################################################################
 require(GenomicRanges)
 
+#' @include schemes.R
+NULL
+
 #' GvizManager
 #'
 #' A class for storing information on pipeline jobs.
@@ -130,6 +133,7 @@ if (!isGeneric("getIdeogramTrack")) {
 #'
 #' @param object	\code{\linkS4class{GvizManager}} object
 #' @param chrom		name of the chromosome for which the track should be returned
+#' @param applyScheme apply the display parameters of the currently active Gviz scheme to the result
 #' @return \code{Gviz::IdeogramTrack} for the specified chromosome
 #'
 #' @rdname getIdeogramTrack-GvizManager-method
@@ -144,9 +148,12 @@ setMethod("getIdeogramTrack",
 	),
 	function(
 		object,
-		chrom
+		chrom,
+		applyScheme=TRUE
 	) {
-		return(object@iTrackL[[chrom]])
+		res <- object@iTrackL[[chrom]]
+		if (applyScheme) res <- applySchemeToTrack(res, getOption("Gviz.scheme"))
+		return(res)
 	}
 )
 
@@ -165,6 +172,7 @@ if (!isGeneric("getGeneTrack")) {
 #'
 #' @param object	\code{\linkS4class{GvizManager}} object
 #' @param chrom		name of the chromosome for which the track should be returned
+#' @param applyScheme apply the display parameters of the currently active Gviz scheme to the result
 #' @return \code{Gviz::GeneRegionTrack} for the specified chromosome
 #'
 #' @rdname getGeneTrack-GvizManager-method
@@ -179,9 +187,12 @@ setMethod("getGeneTrack",
 	),
 	function(
 		object,
-		chrom
+		chrom,
+		applyScheme=TRUE
 	) {
-		return(object@geneTrackL[[chrom]])
+		res <- object@geneTrackL[[chrom]]
+		if (applyScheme) res <- applySchemeToTrack(res, getOption("Gviz.scheme"))
+		return(res)
 	}
 )
 
