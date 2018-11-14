@@ -103,6 +103,18 @@ GvizManager <- function(assembly, geneModel=NULL){
 # }
 
 ################################################################################
+# Display
+################################################################################
+setMethod("show","GvizManager",
+	function(object) {
+		cat("GvizManager object for genome assembly", paste0("'", object@assembly, "'"), "\n")
+		cat("contains:\n")
+		cat(" *", "Data for", length(object@iTrackL),  "chromosomes\n")
+		cat(" *", "Gene model:", object@geneModelName, paste0("(", length(object@geneAnnot), " genes)"), "\n")
+	}
+)
+
+################################################################################
 # Getters
 ################################################################################
 if (!isGeneric("getIdeogramTrack")) {
