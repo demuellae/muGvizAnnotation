@@ -1,0 +1,14 @@
+Package: muGvizAnnotation
+Title: muGvizAnnotation
+Description: Annotation data for making Gviz plots more easy to handle. supplementing the Gviz auxiliary functions from the muRtool package
+Authors@R: c(
+    person("Fabian", "Mueller", email = "fmueller@mpi-inf.mpg.de",
+    role = c("aut", "cre")))
+Date: 2018-11-14
+License: GPL-3
+Version: 0.1
+Depends:
+    muRtools
+Imports:
+Suggests:
+RoxygenNote: 6.1.1
