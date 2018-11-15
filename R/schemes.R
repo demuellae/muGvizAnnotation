@@ -62,7 +62,7 @@ applySchemeToTrack <- function(track, scheme=NULL){
     schemeSettings <- Gviz::getScheme()
   }
   for (typeName in names(schemeSettings)){
-    if (inherits(track, typeName)){
+    if (inherits(track, typeName) || (typeName=="GdObject" && inherits(track, "DataTrack"))){
       displayPars(track) <- schemeSettings[[typeName]]
     }
   }
