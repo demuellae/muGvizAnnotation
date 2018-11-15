@@ -5,7 +5,8 @@ gviz_bwScheme_settings <- list(
     col.border.title="black",
     fontcolor.title="black",
     col.title="black",
-    fontcolor="black"
+    fontcolor="black",
+    col.axis="black"
   ),
   IdeogramTrack=list(
     fontcolor="black"
