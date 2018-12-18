@@ -23,7 +23,11 @@ gviz_bwScheme_settings <- list(
   ),
   GeneRegionTrack=list(
     col=NULL,
-    col.line="black"
+    col.line="black",
+    fill="#43a2ca",
+    just.group="above",
+    collapseTranscripts="meta",
+    shape="smallArrow",
   )
 )
 #' gviz_bwScheme
