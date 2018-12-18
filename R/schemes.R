@@ -27,7 +27,7 @@ gviz_bwScheme_settings <- list(
     fill="#43a2ca",
     just.group="above",
     collapseTranscripts="meta",
-    shape="smallArrow",
+    shape="smallArrow"
   )
 )
 #' gviz_bwScheme
